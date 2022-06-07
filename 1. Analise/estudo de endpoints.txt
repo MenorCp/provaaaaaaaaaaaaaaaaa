@@ -1,0 +1,15 @@
+POST        /heroi
+
+request (200)
+{
+    "heroi": "",
+    "poder": "",
+    "voa"  : true
+}
+
+response (204)
+{
+    "heroi": "",
+    "poder": "",
+    "voa"  : true
+}
