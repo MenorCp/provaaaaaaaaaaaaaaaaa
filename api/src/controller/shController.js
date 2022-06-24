@@ -9,10 +9,19 @@ server.post('/heroi', async (req, resp) => {
         if(!novoheroi.nome)
             throw new Error('O heroi precisa de um nome !! ')
 
+        if(Number(novoheroi.nome) === Number(novoheroi.nome))
+            throw new Error('O Nome do Heroi não pode ser NUMEROS !!')
+
         if(!novoheroi.poder)
             throw new Error('Todo heroi tem um poder, o seu não ?')
 
+        if(Number(novoheroi.poder) === Number(novoheroi.poder))
+            throw new Error('O poder do Heroi não pode ser NUMEROS !!')
+
         if(!novoheroi.voa)
+            throw new Error('Preciso saber se o heroi voa ;( ')
+
+        if(novoheroi.voa === Number(novoheroi.voa))
             throw new Error('Preciso saber se o heroi voa ;( ')
         const heroi = await novoSuperHeroi(novoheroi)
         resp.send(heroi)
